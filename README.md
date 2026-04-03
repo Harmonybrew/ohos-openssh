@@ -45,7 +45,7 @@ export PATH=/data/openssh-10.2p1-ohos-arm64/bin:$PATH
 示例：
 ```sh
 cd /opt
-curl -fLO https://github.com/Harmonybrew/ohos-openssh/releases/download/10.2p1/tar-10.2p1-ohos-arm64.tar.gz
+curl -fLO https://github.com/Harmonybrew/ohos-openssh/releases/download/10.2p1/openssh-10.2p1-ohos-arm64.tar.gz
 tar -zxf openssh-10.2p1-ohos-arm64.tar.gz
 export PATH=/opt/openssh-10.2p1-ohos-arm64/bin:$PATH
 
