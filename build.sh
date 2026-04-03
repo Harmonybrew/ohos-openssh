@@ -85,7 +85,7 @@ mkdir $WORKDIR/deps
 cd $WORKDIR/deps
 
 # 编 openssl
-curl -fSLO https://github.com/openssl/openssl/releases/download/openssl-3.6.1/openssl-3.6.1.tar.gz
+curl -fLO https://github.com/openssl/openssl/releases/download/openssl-3.6.1/openssl-3.6.1.tar.gz
 tar -zxf openssl-3.6.1.tar.gz
 cd openssl-3.6.1
 # 修改证书目录和聚合文件路径，让它能在 OpenHarmony 平台上正确地找到证书
@@ -104,7 +104,7 @@ make install_sw
 cd ..
 
 # 编 zlib
-curl -fSLO https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
+curl -fLO https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
 tar -zxf zlib-1.3.1.tar.gz
 cd zlib-1.3.1
 ./configure --prefix=/opt/deps --static
@@ -115,7 +115,7 @@ cd ..
 cd $WORKDIR
 
 # 编译 openssh
-curl -fSLO https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.2p1.tar.gz
+curl -fLO https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.2p1.tar.gz
 tar -zxf openssh-10.2p1.tar.gz
 cd openssh-10.2p1
 ./configure \
