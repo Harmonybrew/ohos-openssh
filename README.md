@@ -17,11 +17,11 @@
 示例：
 ```sh
 cd ~
-curl -fLO https://github.com/Harmonybrew/ohos-openssh/releases/download/10.2p1/openssh-10.2p1-ohos-arm64.tar.gz
-tar -zxf openssh-10.2p1-ohos-arm64.tar.gz
-export PATH=~/openssh-10.2p1-ohos-arm64/bin:$PATH
+curl -fLO https://github.com/Harmonybrew/ohos-openssh/releases/download/10.4p1/openssh-10.4p1-ohos-arm64.tar.gz
+tar -zxf openssh-10.4p1-ohos-arm64.tar.gz
+export PATH=~/openssh-10.4p1-ohos-arm64/bin:$PATH
 
-# 现在可以使用 openssh 命令了
+# 现在可以使用 ssh 命令了
 ```
 
 **2\. 在鸿蒙开发板中使用**
@@ -30,14 +30,14 @@ export PATH=~/openssh-10.2p1-ohos-arm64/bin:$PATH
 
 示例：
 ```sh
-hdc file send openssh-10.2p1-ohos-arm64.tar.gz /data
+hdc file send openssh-10.4p1-ohos-arm64.tar.gz /data
 hdc shell
 
 cd /data
-tar -zxf openssh-10.2p1-ohos-arm64.tar.gz
-export PATH=/data/openssh-10.2p1-ohos-arm64/bin:$PATH
+tar -zxf openssh-10.4p1-ohos-arm64.tar.gz
+export PATH=/data/openssh-10.4p1-ohos-arm64/bin:$PATH
 
-# 现在可以使用 openssh 命令了
+# 现在可以使用 ssh 命令了
 ```
 
 **3\. 在 [鸿蒙容器](https://github.com/hqzing/dockerharmony) 中使用**
@@ -47,11 +47,11 @@ export PATH=/data/openssh-10.2p1-ohos-arm64/bin:$PATH
 示例：
 ```sh
 cd /opt
-curl -fLO https://github.com/Harmonybrew/ohos-openssh/releases/download/10.2p1/openssh-10.2p1-ohos-arm64.tar.gz
-tar -zxf openssh-10.2p1-ohos-arm64.tar.gz
-export PATH=/opt/openssh-10.2p1-ohos-arm64/bin:$PATH
+curl -fLO https://github.com/Harmonybrew/ohos-openssh/releases/download/10.4p1/openssh-10.4p1-ohos-arm64.tar.gz
+tar -zxf openssh-10.4p1-ohos-arm64.tar.gz
+export PATH=/opt/openssh-10.4p1-ohos-arm64/bin:$PATH
 
-# 现在可以使用 openssh 命令了
+# 现在可以使用 ssh 命令了
 ```
 
 ## 从源码构建
