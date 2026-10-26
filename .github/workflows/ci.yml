@@ -32,13 +32,13 @@ jobs:
           rm -rf gh_2.89.0_linux_arm64*
 
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
 
       - name: Build
         run: ./build.sh
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           path: openssh-10.4p1-ohos-arm64.tar.gz
 

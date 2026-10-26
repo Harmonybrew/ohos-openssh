@@ -15,7 +15,7 @@ rm -rf *.tar.gz \
 # 下载一些命令行工具，并将它们软链接到 bin 目录中
 cd /opt
 echo "coreutils 9.10
-busybox 1.37.0
+unzip 6.0
 grep 3.12
 gawk 5.3.2
 make 4.4.1
@@ -30,12 +30,12 @@ rm -rf *.tar.gz
 ln -sf $(pwd)/*-ohos-arm64/bin/* /bin/
 
 # 准备 ohos-sdk
-curl -fL -o ohos-sdk-full_6.1-Release.tar.gz https://cidownload.openharmony.cn/version/Master_Version/OpenHarmony_6.1.0.31/20260311_020435/version-Master_Version-OpenHarmony_6.1.0.31-20260311_020435-ohos-sdk-full_6.1-Release.tar.gz
-tar -zxf ohos-sdk-full_6.1-Release.tar.gz
-rm -rf ohos-sdk-full_6.1-Release.tar.gz ohos-sdk/windows ohos-sdk/linux
+curl -fL -o ohos-sdk.tar.gz https://repo.huaweicloud.com/openharmony/os/7.0-Release/ohos-sdk-windows_linux-public_20260829.tar.gz
+tar -zxf ohos-sdk.tar.gz -C ./ ohos-sdk/ohos
+rm -rf ohos-sdk.tar.gz
 cd ohos-sdk/ohos
-busybox unzip -q native-*.zip
-busybox unzip -q toolchains-*.zip
+unzip -q native-*.zip
+unzip -q toolchains-*.zip
 rm -rf *.zip
 cd $WORKDIR
 
@@ -88,9 +88,9 @@ mkdir $WORKDIR/deps
 cd $WORKDIR/deps
 
 # 编 openssl
-curl -fLO https://github.com/openssl/openssl/releases/download/openssl-3.6.1/openssl-3.6.1.tar.gz
-tar -zxf openssl-3.6.1.tar.gz
-cd openssl-3.6.1
+curl -fLO https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz
+tar -zxf openssl-3.5.9.tar.gz
+cd openssl-3.5.9
 # 修改证书目录和聚合文件路径，让它能在 OpenHarmony 平台上正确地找到证书
 sed -i 's|OPENSSLDIR "/certs"|"/etc/ssl/certs"|' include/internal/common.h
 sed -i 's|OPENSSLDIR "/cert.pem"|"/etc/ssl/certs/cacert.pem"|' include/internal/common.h
@@ -227,8 +227,8 @@ $(cat openssh-${VERSION}/LICENCE)
 
 openssl
 =============
-$(cat deps/openssl-3.6.1/LICENSE.txt)
-$(cat deps/openssl-3.6.1/AUTHORS.md)
+$(cat deps/openssl-3.5.9/LICENSE.txt)
+$(cat deps/openssl-3.5.9/AUTHORS.md)
 
 zlib
 =============
